@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Website Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../css/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <p class="navbar-text pull-left align">
+                <a href="website-list.html" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="website-new.html">New Website</a>
+        </div>
+        <!--<div class="collapse navbar-collapse" id="myNavbar">-->
+            <!--<ul class="nav navbar-nav">-->
+                <!--<li class="nav-link"><a href="website-list.html">Websites</a></li>-->
+                <!--<li class="nav-link"><a href="../page/page-list.html">Pages</a></li>-->
+                <!--<li class="nav-link"><a href="../widget/widget-list.html">Widgets</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+
+    <div class="hidden-xs">
+        <div class="list-group col-sm-4">
+            <li class="list-group-item">
+                <a href="../page/page-list.html">Address Book App</a>
+                <a href="website-edit.html" class="icon">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="../page/page-list.html">Script Testing App</a>
+                <a href="website-edit.html" class="icon">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="../page/page-list.html">Blogger</a>
+                <a href="website-edit.html" class="icon">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="../page/page-list.html">Blogging App</a>
+                <a href="website-edit.html" class="icon">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </a>
+            </li>
+        </div>
+    </div>
+
+    <div class="col-sm-8">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="name">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control"
+                          rows="4" placeholder="Description"></textarea>
+            </div>
+        </form>
+        <a class="btn btn-primary btn-block"
+           href="website-list.html">Submit</a>
+        <a class="btn btn-danger  btn-block"
+           href="website-list.html">Cancel</a>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="dropdown navbar-text pull-right">
+            <a href="../user/profile.html" class="navbar-link dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="../user/profile.html">Profile</a></li>
+                <li><a href="../user/login.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>
