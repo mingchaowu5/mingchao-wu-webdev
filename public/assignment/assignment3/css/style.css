@@ -1,0 +1,33 @@
+
+.default-text{
+    color:white ;
+}
+
+.icon{
+    float: right;
+}
+body {
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+.navbar-default {
+    background-color: dodgerblue;
+    color: white;
+    font: "Songti SC"
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-text {
+    color: white;
+}
+.navbar-text{
+    color:white ;
+}
+.btn-primary{
+    margin-top: 10px;
+}
+.glyphicon{
+    color: lightgray;
+}
