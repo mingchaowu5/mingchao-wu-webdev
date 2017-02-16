@@ -23,7 +23,7 @@
         function createWebsite(uid, website) {
             for (var w in websites)
             {
-                if(websites[w].name === website.name)
+                if(websites[w].name == website.name)
                     return null;
             }
 
@@ -59,7 +59,7 @@
         function updateWebsite(wid, website) {
             for (var w in websites)
             {
-                if(websites[w]._id === wid)
+                if(websites[w]._id == wid)
                 {
                     websites[w].name= website.name;
                     websites[w].description = website.description;
@@ -72,7 +72,7 @@
         function deleteWebsite(wid) {
             for (var w in websites)
             {
-                if(websites[w]._id === wid)
+                if(websites[w]._id == wid)
                 {
                     var website = websites[w];
                     websites.splice(w,1);

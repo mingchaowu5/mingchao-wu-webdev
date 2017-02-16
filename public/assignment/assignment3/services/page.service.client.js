@@ -21,7 +21,7 @@
         function createPage(wid, page) {
             for (var p in pages)
             {
-                if(pages[p].name === page.name)
+                if(pages[p].name == page.name)
                     return null;
             }
 
@@ -37,7 +37,7 @@
             var reqPages = [];
             for (var p in pages)
             {
-                if(pages[p].websiteId === wid)
+                if(pages[p].websiteId == wid)
                 {
                     reqPages.push(pages[p]);
                 }
@@ -48,7 +48,7 @@
         function findPageById(_id) {
             for (var p in pages)
             {
-                if(pages[p]._id === _id)
+                if(pages[p]._id == _id)
                     return angular.copy(pages[p]);
             }
             return null;
@@ -57,7 +57,7 @@
         function updatePage(pid, page) {
             for (var p in pages)
             {
-                if(pages[p]._id === pid)
+                if(pages[p]._id == pid)
                 {
                     pages[p].name= page.name;
                     pages[p].description = page.description;
@@ -70,7 +70,7 @@
         function deletePage(pid) {
             for (var p in pages)
             {
-                if(pages[p]._id === pid)
+                if(pages[p]._id == pid)
                 {
                     var page = pages[p];
                     pages.splice(p,1);
