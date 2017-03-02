@@ -92,7 +92,7 @@
                 .success(function (newWidget) {
                     vm.widget = newWidget;
                     vm.widgetId = newWidget._id;
-                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/");
+                    $location.url("/user/"+vm.userId+"/website/"+vm.websiteId+"/page/"+vm.pageId+"/widget/"+vm.widgetId);
                 })
                 .error(function () {
                     vm.error = "Create new Widget Failed!";
