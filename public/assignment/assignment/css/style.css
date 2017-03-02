@@ -1,0 +1,60 @@
+input.form-control {
+    margin-bottom: 5px;
+}
+
+.default-text{
+    color:white ;
+}
+
+.icon{
+    float: right;
+}
+body {
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+.navbar-default {
+    background-color: dodgerblue;
+    color: white;
+
+}
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-text {
+    color: white;
+}
+.navbar-text{
+    color:white ;
+}
+.btn-primary{
+    margin-top: 10px;
+}
+.glyphicon{
+    color: lightgray;
+}
+
+.toolbar-right {
+    position: absolute;
+    right: 20px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+}
+@media screen and (max-width: 767px) {
+    .pull-left {
+        margin-left: 5%;
+    }
+
+    .pull-right {
+        margin-right: 5%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .pull-right {
+        position: absolute;
+        right: 30px;
+    }
+}
