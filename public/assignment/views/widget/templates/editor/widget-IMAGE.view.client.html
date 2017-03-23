@@ -1,0 +1,39 @@
+
+<form enctype="multipart/form-data"
+      class="form">
+    <div class="form-group">
+        <button ng-click="model.searchFromFlickr()"
+                class="btn btn-primary btn-block">
+            Search from Flickr
+        </button>
+    </div>
+    <div class="form-group">
+        <label for="width">Width</label>
+        <input ng-model="model.widget.width"
+               name="width"
+               type="text"
+               class="form-control"
+               id="image-width"
+               placeholder="Image Width">
+    </div>
+    <div class="form-group">
+        <label for="url">URL</label>
+        <input ng-model="model.widget.url"
+               name="url"
+               type="text"
+               class="form-control"
+               placeholder="Image URL">
+    </div>
+    <div class="form-group">
+        <label for="upload">Upload</label>
+        <input name="upload-file"
+               file-model="model.uploadFile"
+               type="file"
+               class="form-control"
+               id="image-upload">
+
+    </div>
+    <button ng-click="model.requestUploadFile()"
+            class="btn btn-primary btn-block">Upload
+    </button>
+</form>
