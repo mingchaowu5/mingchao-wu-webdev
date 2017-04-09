@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <!--<div class="navbar-text pull-right">-->
+        <!--<a ng-climodelsodel.updmodelsodel.user)"><span class="glyphicon glyphicon-ok"></span></a>-->
+        <!--</div>-->
+        <div class="btn-group pull-right hw-button-group" role="group" aria-label="...">
+            <span ng-hide="currentUser">
+                <a class="btn btn-default" href="#/login">Login</a>
+                <a class="btn btn-default" href="#/register">Register</a>
+            </span>
+            <span ng-show="currentUser">
+                <a class="btn btn-default" href="#/profile">Profile</a>
+                <a class="btn btn-default" href="#/logout">Logout</a>
+            </span>
+            <span ng-show="currentUser.role.indexOf('admin') > -1">
+                <a href="#/admin">Admin</a>
+            </span>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">sysetm</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <!--TODO: add contents to the main pages:-->
+    <!--goodreads comments, availabookooks by categories, hot authors, etc.-->
+</div>
+
+<nav class="navbar navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="row navbar-right navbar-text">
+            <div class="col-xs-12 text-right">
+                <!--<a href="#/usemodelsodel.user._id}}"><span class="glyphicon glyphicon-user"></span></a>-->
+            </div>
+        </div>
+    </div>
+</nav>

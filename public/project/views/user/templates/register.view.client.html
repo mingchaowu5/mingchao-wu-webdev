@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<div class="container">
+    <h1>Register</h1>
+
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
+
+    <label for="username">Username</label>
+    <input ng-model="model.user.username" id="username" type="text" class="form-control" placeholder="username"/>
+
+    <label for="passwd">Password</label>
+    <input ng-model="model.user.password" id="passwd" type="password" class="form-control" placeholder="password"/>
+
+    <label for="reg-v-passwd">Validate Password</label>
+
+    <!--TODO: validate the two passwords-->
+    <input ng-model="model.user.passwordCheck"
+           id="reg-v-passwd"
+           type="password" class="form-control" placeholder="verify password"/>
+
+    <form>
+        <input ng-model="model.user.role" type="radio" value="reader" checked="checked"> Reader<br>
+        <input ng-model="model.user.role" type="radio" value="writer"> Writer
+    </form>
+
+    <a class="btn btn-primary btn-block" ng-click="model.register(model.user)">Register</a>
+    <a class="btn btn-danger  btn-block" href="#/login">Cancel</a>
+</div>
