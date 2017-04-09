@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebProject">
+<head>
+    <meta charset="UTF-8">
+    <title>system - Publish Your Own Books</title>
+
+    <meta name="viewpoint" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- jQuery UI-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!--text angular css-->
+    <link rel="stylesheet" href="../css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.16/textAngular.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!--text angular css-->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!-- Angular core lib from a CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!--angular routing module-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+
+    <!--text angular js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.16/textAngular-rangy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.16/textAngular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.16/textAngular.min.js"></script>
+
+
+    <!--sortable directives-->
+    <!--<script src="directives/wbdv-sortable.js"></script>-->
+
+    <!-- local app -->
+    <script src="app.js"></script>
+
+    <script src="config.js"></script>
+
+    <!--Controllers-->
+    <script src="views/home/home.controller.client.js"></script>
+    <script src="views/user/controllers/user.controller.client.js"></script>
+    <script src="views/book/controllers/book.controller.client.js"></script>
+    <script src="views/admin/controllers/admin.controller.client.js"></script>
+
+    <!--Services-->
+    <script src="services/user.service.client.js"></script>
+    <script src="services/book.service.client.js"></script>
+    <script src="services/admin.service.client.js"></script>
+</head>
+
+<body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1666347050338226',
+            xfbml      : true,
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+        <!--<div class="navbar-text pull-right">-->
+        <!--<a ng-climodelsodel.updmodelsodel.user)"><span class="glyphicon glyphicon-ok"></span></a>-->
+        <!--</div>-->
+        <div class="btn-group pull-right hw-button-group" role="group" aria-label="...">
+            <span ng-hide="currentUser">
+                <a class="btn btn-default" href="#/login">Login</a>
+                <a class="btn btn-default" href="#/register">Register</a>
+            </span>
+            <span ng-show="currentUser">
+                <a class="btn btn-default" href="#/user/{{currentUser._id}}/profile">Profile</a>
+                <a class="btn btn-default" href="#/logout">Logout</a>
+            </span>
+            <span ng-show="currentUser.role.indexOf('admin') > -1">
+                <a href="#/admin">Admin</a>
+            </span>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">system</a>
+        </div>
+    </div>
+</nav>
+
+<div ng-view></div>
+
+
+<nav class="navbar navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div
+                class="fb-like navbar-left"
+                data-share="true"
+                data-width="450"
+                data-show-faces="true">
+        </div>
+
+        <div class="row navbar-right navbar-text">
+            <div class="col-xs-12 text-right">
+                <a href="#/user/{{currentUser._id}}/profile"><span class="glyphicon glyphicon-user"></span></a>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
