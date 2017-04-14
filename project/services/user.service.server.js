@@ -25,12 +25,17 @@ module.exports = function (app, model) {
     //     callbackURL: process.env.FACEBOOK_CALLBACK_URL
     // };
 
+    // var googleConfig = {
+    //     clientID: process.env.GOOGLE_CLIENT_ID,
+    //     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    //     callbackURL: process.env.GOOGLE_CALLBACK_URL
+    // };
     var googleConfig = {
-        clientID: process.env.GOOGLE_CLIENT_ID,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: process.env.GOOGLE_CALLBACK_URL
+        clientID: '714176533811-k9elca9kiu3hsr0qgo7qd5iofk53f2hh.apps.googleusercontent.com',
+        clientSecret: '3USgEmqTcFRC7S8fmyLogutb',
+        callbackURL: 'http://localhost:3000/google/oauth/callback'
+        // callbackURL: 'http://127.0.0.1/google/callback'
     };
-
     // var goodreadsConfig = {
     //     consumerKey: process.env.GOODREADS_KEY,
     //     consumerSecret: process.env.GOODREADS_CLIENT_SECRET,
