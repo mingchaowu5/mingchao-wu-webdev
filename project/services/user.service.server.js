@@ -33,7 +33,7 @@ module.exports = function (app, model) {
     var googleConfig = {
         clientID: '714176533811-k9elca9kiu3hsr0qgo7qd5iofk53f2hh.apps.googleusercontent.com',
         clientSecret: '3USgEmqTcFRC7S8fmyLogutb',
-        callbackURL: 'https://mingchao-wu-web.herokuapp.com/google/auth/callback'
+        callbackURL: 'https://mingchao-wu-web.herokuapp.com/google/oauth/callback'
         // callbackURL: 'http://localhost:3000/google/oauth/callback'
         // callbackURL: 'http://127.0.0.1/google/callback'
     };
