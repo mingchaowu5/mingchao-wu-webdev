@@ -1,21 +1,54 @@
 
 module.exports = function () {
-    var api = {};
+    var api = {
+        createBook: createBookForAuthor,
+        findBookById: findBookById,
+        findAllBooksForAuthor: findAllBooksForAuthor,
+        findAllBooks: findAllBooks,
+        updateBook: updateBook,
+        deleteBook: deleteBook
+    };
 
     var mongoose = require('mongoose');
     mongoose.Promise = require('q').Promise;
 
-    var BookSchema = require('./book.model.server')();
-    var BookModel = mongoose.model('UserModel', BookSchema);
+    var BookSchema = require('./book.schema.server')();
+    var BookModel = mongoose.model('AWBookModel', BookSchema);
 
     return api;
 
-    function createBook(newBook) {
+    function findPopularBooks() {
+        // TODO:
+    }
+
+    function findAllBooks() {
+        return BookModel.find();
+    }
+
+    function createBookForAuthor(userId, newBook) {
+        if (newBook.authors) {
+            newBook.authors.push(userId);
+        } else {
+            newBook.authors = [userId];
+        }
         return BookModel.create(newBook);
     }
 
     function updateBook(bookId, newBook) {
-        return BookModel.update({_id: bookId, $set: newBook});
+        console.log(newBook);
+        console.log(JSON.stringify(newBook));
+        return BookModel.update({
+            _id: bookId
+        }, {
+            title: newBook.title,
+            authors: newBook.authors,
+            isbn: newBook.isbn,
+            articles: newBook.articles,
+            subscribers: newBook.subscribers,
+            genres: newBook.genres,
+            // liked: newBook.liked,
+            description: newBook.description
+        });
     }
 
     function findBookById(bookId) {
@@ -26,11 +59,9 @@ module.exports = function () {
         return BookModel.remove({_id: bookId});
     }
 
+    function findAllBooksForAuthor(authorId) {
+        return BookModel.find({authors: authorId});
+    }
+
     // TODO: add/remove article, etc.
 };
-
-/*
-1. CRUD for book
-2. add/remove article, etc.
-3.
- */

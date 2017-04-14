@@ -5,16 +5,16 @@ module.exports = function (app) {
     var BookSchema = mongoose.Schema({
         title: {type: String, required: true},
         authors: [{type: mongoose.Schema.Types.ObjectId, ref: "user"}],
-        nid: String,
+        isbn: String,
         articles: [{type: mongoose.Schema.Types.ObjectId, ref: "article"}],
         subscribers: [{type: mongoose.Schema.Types.ObjectId, ref: "user"}],
         genres: {
-            type: [String],
-            enum: ["Science fiction", "Satire", "Drama", "Action and Adventure", "Romance", "Mystery", "Horror",
-                "Self help", "Health", "Guide", "Travel", "Children's", "Religion, Spirituality & New Age", "Science",
-                "History", "Math", "Anthology", "Poetry", "Encyclopedias", "Dictionaries", "Comics", "Art",
-                "Cookbooks", "Diaries", "Journals", "Prayer books", "Series", "Trilogy", "Biographies",
-                "Autobiographies", "Fantasy"]
+            type: [String]
+            // enum: ["Science fiction", "Satire", "Drama", "Action and Adventure", "Romance", "Mystery", "Horror",
+            //     "Self help", "Health", "Guide", "Travel", "Children's", "Religion, Spirituality & New Age", "Science",
+            //     "History", "Math", "Anthology", "Poetry", "Encyclopedias", "Dictionaries", "Comics", "Art",
+            //     "Cookbooks", "Diaries", "Journals", "Prayer books", "Series", "Trilogy", "Biographies",
+            //     "Autobiographies", "Fantasy"]
         },
         liked: Number,
         description: String
@@ -26,7 +26,7 @@ module.exports = function (app) {
 /*
  1. title
  2. authors: [ref to users]
- 3. Nid
+ 3. ISBN
  4. articles: [references to articles]
  5. subscriber: []
  6. categories:

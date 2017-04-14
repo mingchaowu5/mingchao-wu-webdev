@@ -1,5 +1,5 @@
 
 (function () {
     angular
-        .module("WebProject", ["ngRoute", "textAngular"]);
+        .module("CourseSystem", ["ngRoute", "textAngular"]);
 })();

@@ -1,13 +1,15 @@
 
 (function () {
    angular
-       .module("WebProject")
+       .module("CourseSystem")
        .controller("AdminController", AdminController);
    
    function AdminController(UserService) {
 
        var vm = this;
-       vm.createUser = createUser;
+       vm.register = register;
+       vm.updateUser = updateUser;
+       vm.deleteUser = deleteUser;
 
        function init() {
            var promise = UserService.findAllUsers();
@@ -21,9 +23,40 @@
        }
        init();
        
-       function createUser(user) {
-           console.log(user);
-           var promise = UserService.createUser(user);
+       function register(user) {
+           if (!user || !user.username || !user.password) {
+               vm.error = "missing required field";
+               return;
+           }
+
+           var promise = UserService.register(user);
+           promise.success(function (user) {
+               init();
+           });
+
+           promise.error(function (data, status) {
+               vm.error = data;
+           });
+       }
+
+       function updateUser(user) {
+           if (!user || !user.username || !user.password) {
+               vm.error = "missing required field";
+               return;
+           }
+
+           var promise = UserService.updateUser(user._id, user);
+           promise.success(function (user) {
+               init();
+           });
+
+           promise.error(function (data, status) {
+               vm.error = data;
+           });
+       }
+
+       function deleteUser(userId) {
+           var promise = UserService.deleteUser(userId);
            promise.success(function (user) {
                init();
            });

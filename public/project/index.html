@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="WebProject">
+<html lang="en" ng-app="CourseSystem">
 <head>
     <meta charset="UTF-8">
-    <title>system - Publish Your Own Books</title>
+    <title>Course System </title>
 
     <meta name="viewpoint" content="width=device-width, initial-scale=1">
     <!-- Bootstrap Latest compiled and minified CSS -->
@@ -56,14 +56,20 @@
     <script src="views/user/controllers/user.controller.client.js"></script>
     <script src="views/book/controllers/book.controller.client.js"></script>
     <script src="views/admin/controllers/admin.controller.client.js"></script>
+    <script src="views/user/controllers/reader.controller.client.js"></script>
+    <script src="views/user/controllers/writer.controller.client.js"></script>
+    <script src="views/article/controllers/article.controller.client.js"></script>
 
     <!--Services-->
     <script src="services/user.service.client.js"></script>
     <script src="services/book.service.client.js"></script>
     <script src="services/admin.service.client.js"></script>
+    <script src="services/article.service.client.js"></script>
+    <script src="services/goodreads.service.client.js"></script>
 </head>
 
-<body>
+<!--<body>-->
+<body style="background-image: url(images/bgimg.jpg);">
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -83,49 +89,33 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<nav class="navbar navbar-fixed-top">
-    <div class="container-fluid">
-        <!--<div class="navbar-text pull-right">-->
-        <!--<a ng-climodelsodel.updmodelsodel.user)"><span class="glyphicon glyphicon-ok"></span></a>-->
-        <!--</div>-->
-        <div class="btn-group pull-right hw-button-group" role="group" aria-label="...">
-            <span ng-hide="currentUser">
-                <a class="btn btn-default" href="#/login">Login</a>
-                <a class="btn btn-default" href="#/register">Register</a>
-            </span>
-            <span ng-show="currentUser">
-                <a class="btn btn-default" href="#/user/{{currentUser._id}}/profile">Profile</a>
-                <a class="btn btn-default" href="#/logout">Logout</a>
-            </span>
-            <span ng-show="currentUser.role.indexOf('admin') > -1">
-                <a href="#/admin">Admin</a>
-            </span>
-        </div>
-
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#/home">system</a>
-        </div>
-    </div>
-</nav>
-
 <div ng-view></div>
 
 
-<nav class="navbar navbar-fixed-bottom">
-    <div class="container-fluid">
-        <div
-                class="fb-like navbar-left"
-                data-share="true"
-                data-width="450"
-                data-show-faces="true">
+<div class="navbar menubar navbar-fixed-bottom" id="menu" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle menu-button" data-toggle="collapse" data-target="#myNavbar">
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </button>
+            <a class="navbar-brand logo" href="#/home">Course System</a>
         </div>
-
-        <div class="row navbar-right navbar-text">
-            <div class="col-xs-12 text-right">
-                <a href="#/user/{{currentUser._id}}/profile"><span class="glyphicon glyphicon-user"></span></a>
-            </div>
+        <!--<p navstyle>Copyright by mcw</p>-->
+        <div>
+            <nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+                <ul class="nav navbar-nav navbar-right navstyle">
+                    <li><a href="#/home" class="page-scroll active">Home</a></li>
+                    <li><a href="http://www.northeastern.edu/" class="page-scroll">Northeastern</a></li>
+                    <!--<li><a href="#gallery" class="page-scroll">Gallery</a></li>-->
+                    <!--<li><a href="#about" class="page-scroll">About</a></li>-->
+                    <!--<li><a href="#testimonials" class="page-scroll">Testimonials</a></li>-->
+                    <li><a href="../index.html" class="page-scroll">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
-</nav>
+</div>
+
+
 </body>
 </html>

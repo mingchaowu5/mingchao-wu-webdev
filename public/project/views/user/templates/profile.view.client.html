@@ -58,22 +58,17 @@
        ng-click="model.update(model.user)">Update Profile</a>
     <!--href="#/user/{{model.userId}}/shelf">My Book Shelf</a>-->
 
-    <a class="btn btn-primary btn-block"
-       href="#/user/{{model.userId}}/shelf">My Book Shelf</a>
-       <!--href="#/user/{{model.userId}}/shelf">My Book Shelf</a>-->
+    <a ng-show="currentUser.role.indexOf('reader') > -1"
+       class="btn btn-primary btn-block"
+       href="#/reader/{{model.userId}}/bookshelf">My Registration</a>
+
+    <a ng-show="currentUser.role.indexOf('writer') > -1"
+       class="btn btn-primary btn-block"
+       href="#/writer/{{model.userId}}/published">My Class</a>
+
+    <!--href="#/user/{{model.userId}}/shelf">My Book Shelf</a>-->
 
     <!--TODO: create a delete user button to test delete user function-->
 
-    <a class="btn btn-danger  btn-block"
-       href="#/logout">Logout</a>
+    <a class="btn btn-danger  btn-block" ng-click="model.logout()">Logout</a>
 </div>
-
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
-    <div class="container-fluid">
-        <div class="row navbar-right navbar-text">
-            <div class="col-xs-12 text-right">
-                <a href="#/user/{{model.user._id}}"><span class="glyphicon glyphicon-user"></span></a>
-            </div>
-        </div>
-    </div>
-</nav>

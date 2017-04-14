@@ -1,7 +1,6 @@
-
 (function () {
     angular
-        .module("WebProject")
+        .module("CourseSystem")
         .factory("UserService", UserService);
 
     function UserService($http) {
@@ -13,15 +12,25 @@
             "updateUser": updateUser,
             "deleteUser": deleteUser,
             "login": login,
+            "loginGoogle": loginGoogle,
             "register": register,
             "logout": logout,
             "checkLoggedIn": checkLoggedIn,
-            "findAllUsers": findAllUsers
+            "findAllUsers": findAllUsers,
+            "addToBookshelf": addToBookshelf
         };
         return api;
 
+        function addToBookshelf(bookId, userId) {
+            return $http.put("/aw/api/user/"+ userId +"/addToShelf/" + bookId);
+        }
+
+        function likeTheArticle(articleId, user) {
+
+        }
+
         function register(user) {
-            return $http.post("/api/register", user);
+            return $http.post("/aw/api/register", user);
         }
 
         function findAllUsers(callback) {
@@ -37,15 +46,19 @@
             // return $http.get("/aw/api/user?username=" + user.username + "&password=" + user.password);
         }
 
+        function loginGoogle() {
+            return $http.get("/auth/google");
+        }
+
         function logout(user) {
             return $http.post("/aw/api/logout", user);
         }
 
         function checkLoggedIn() {
-            return $http.get('/aw/api//loggedin')
-                .then(function (response) {
-                    return response.data;
-                });
+            return $http.get('/aw/api/loggedin');
+                // .then(function (response) {
+                //     return response.data;
+                // });
         }
 
         function createUser(newUser) {

@@ -1,42 +1,142 @@
 <!DOCTYPE html>
-
-<nav class="navbar navbar-fixed-top">
-    <div class="container-fluid">
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+    <!--/head-->
+<nav class="navbar navbar-default navbar-fixed-top navbar-bc container-fluid">
+    <!--<div class="container-fluid">-->
         <!--<div class="navbar-text pull-right">-->
         <!--<a ng-climodelsodel.updmodelsodel.user)"><span class="glyphicon glyphicon-ok"></span></a>-->
         <!--</div>-->
         <div class="btn-group pull-right hw-button-group" role="group" aria-label="...">
+            <span ng-show="currentUser.role.indexOf('admin') > -1">
+                <a class="btn btn-danger" href="#/admin">Admin</a>
+            </span>
+            <span ng-show="currentUser.role.indexOf('writer') > -1">
+                <a class="btn btn-primary" href="#/writer/{{currentUser._id}}/published">My Class</a>
+            </span>
+            <span ng-show="currentUser.role.indexOf('reader') > -1">
+                <a class="btn btn-primary" href="#/reader/{{currentUser._id}}/bookshelf">My Registration</a>
+            </span>
             <span ng-hide="currentUser">
                 <a class="btn btn-default" href="#/login">Login</a>
                 <a class="btn btn-default" href="#/register">Register</a>
             </span>
             <span ng-show="currentUser">
-                <a class="btn btn-default" href="#/profile">Profile</a>
-                <a class="btn btn-default" href="#/logout">Logout</a>
-            </span>
-            <span ng-show="currentUser.role.indexOf('admin') > -1">
-                <a href="#/admin">Admin</a>
+                <!--<a class="btn btn-default" ng-click="model.gotoProfile()">Profile</a>-->
+                <a class="btn btn-default" href="#/user/{{currentUser._id}}">Profile</a>
+                <a class="btn btn-default" ng-click="model.logout()">Logout</a>
             </span>
         </div>
 
         <div class="navbar-header">
-            <a class="navbar-brand" href="#/home">sysetm</a>
+            <a class="navbar-brand" href="#/home">Course System</a>
         </div>
-    </div>
+    <!--</div>-->
 </nav>
 
 
-<div class="container">
-    <!--TODO: add contents to the main pages:-->
-    <!--goodreads comments, availabookooks by categories, hot authors, etc.-->
-</div>
-
-<nav class="navbar navbar-fixed-bottom">
-    <div class="container-fluid">
-        <div class="row navbar-right navbar-text">
-            <div class="col-xs-12 text-right">
-                <!--<a href="#/usemodelsodel.user._id}}"><span class="glyphicon glyphicon-user"></span></a>-->
+<div class="container  up50 ">
+    <h3>Courses List</h3>
+    <div class="col-xs-4" ng-repeat="book in model.allBooks">
+        <div class="row">
+            <div class="col-xs-12 pull-right">
+                <!--<a href="#/reader/{{model.userId}}/book/{{book._id}}">-->
+                <a ng-click="model.gotoBook(book)">
+                    {{book.title}}
+                </a>
             </div>
         </div>
     </div>
-</nav>
+</div>
+<div class="up100">
+<div class="col-xs-8">
+    <input class="form-control" id="coursenumber"  placeholder="ex.cs5610">
+</div>
+<!--<button onclick="window.location.href='https://www.google.com/search?q='+coursenumber.value">Search the CourseID in Google</button>-->
+<div class="col-xs-4">
+    <a class="btn btn-primary  btn-block" ng-click="window.location.href='https://www.google.com/search?q='+coursenumber.value">Search by CourseID</a>
+</div>
+</div>
+
+
+
+<section id="main-slider" class="no-margin up50">
+    <div class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#main-slider" data-slide-to="1"></li>
+            <li data-target="#main-slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+
+            <div class="item active" style="background-image: url(images/jose.jpg)">
+                <div class="container">
+                    <div class="row slide-margin">
+                        <div class="col-sm-6">
+                            <div class="carousel-content">
+                                <h1 class="animation animated-item-1">CS5610</h1>
+                                <h2 class="animation animated-item-2">WEB DEVELOPEMENT</h2>
+                                <a class="btn-slide animation animated-item-3" href="http://portal-cs5610online.rhcloud.com/#/">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 hidden-xs animation animated-item-4">
+                            <div class="slider-img">
+                                <!--<img src="images/jose.jpg" class="img-responsive">-->
+
+                                <!--<img src="images/slider/img1.png" class="img-responsive">-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/.item-->
+
+            <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+                <div class="container">
+                    <div class="row slide-margin">
+                        <div class="col-sm-6">
+                            <div class="carousel-content">
+                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 hidden-xs animation animated-item-4">
+                            <div class="slider-img">
+                                <img src="images/slider/img2.png" class="img-responsive">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/.item-->
+
+            <div class="item" style="background-image: url(images/slider/bg3.jpg)">
+                <div class="container">
+                    <div class="row slide-margin">
+                        <div class="col-sm-6">
+                            <div class="carousel-content">
+                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                <a class="btn-slide animation animated-item-3" href="#">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 hidden-xs animation animated-item-4">
+                            <div class="slider-img">
+                                <img src="images/slider/img3.png" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+    </div><!--/.carousel-->
+    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</section><!--/#main-slider-->

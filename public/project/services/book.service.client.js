@@ -1,7 +1,7 @@
 
 (function () {
     angular
-        .module("WebProject")
+        .module("CourseSystem")
         .factory("BookService", BookService);
 
     function BookService($http) {
@@ -11,37 +11,48 @@
             "updateBook": updateBook,
             "deleteBook": deleteBook,
             "findBookByTitle": findBookByTitle,
-            "findBooksByAuthor": findBooksByAuthor,
-            "findBookByNid": findBookByNid
+            "findBooksByAuthorId": findBooksByAuthorId,
+            "findBookByISBN": findBookByISBN,
+            "findAllBooks": findAllBooks
         };
         return api;
 
-        function createBook(newBook) {
-            return $http.post("/aw/api/book", newBook);
+        function createBook(userId, newBook) {
+            return $http.post("/aw/api/writer/" + userId +"/book", newBook);
         }
 
         function findBookById(bookId) {
-            return $http.get("/aw/api/book", bookId);
+            return $http.get("/aw/api/book/" + bookId);
         }
 
-        function updateBook(newBook) {
-            return $http.put("/aw/api/book", newBook);
+        function updateBook(bookId, newBook) {
+            console.log("update book in service client");
+            console.log(newBook);
+            return $http.put("/aw/api/book/" + bookId, newBook);
         }
 
         function deleteBook(bookId) {
-            return $http.delete("/aw/api/book", bookId);
+            return $http.delete("/aw/api/book/" + bookId);
         }
 
         function findBookByTitle(title) {
             return $http.get("/aw/api/book?title=" + title);
         }
 
-        function findBooksByAuthor(author) {
-            return $http.get("/aw/api/book?author=" + author);
+        function findBooksByAuthorId(author) {
+            return $http.get("/aw/api/book?authorId=" + author);
         }
         
-        function findBookByNid(nid) {
-            return $http.get("/aw/api/book?nid=" + nid);
+        function findBookByISBN(isbn) {
+            return $http.get("/aw/api/book?ISBN=" + isbn);
+        }
+
+        function findAllBooks() {
+            return $http.get("/aw/api/book/all");
+        }
+
+        function findPopularBooks(amount) {
+            return $http.get("/aw/api/book/popular/"+amount);
         }
     }
 })();
@@ -49,7 +60,7 @@
 /*
  1. title
  2. authors: [ref to users]
- 3. Nid
+ 3. ISBN
  4. articles: [references to articles]
  5. subscriber: []
  6. categories:

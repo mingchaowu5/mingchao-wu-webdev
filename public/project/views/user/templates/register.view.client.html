@@ -18,10 +18,16 @@
     <input ng-model="model.user.passwordCheck"
            id="reg-v-passwd"
            type="password" class="form-control" placeholder="verify password"/>
-
+    <label for="role">Role</label>
     <form>
-        <input ng-model="model.user.role" type="radio" value="reader" checked="checked"> Reader<br>
-        <input ng-model="model.user.role" type="radio" value="writer"> Writer
+        <select ng-model="model.user.role" id="role">
+
+            <option value ="reader">Student</option>
+            <option value ="writer">Professor</option>
+        </select>
+        <!---->
+        <!--<input ng-model="model.user.role" type="radio" value="reader" checked="checked"> Student-->
+        <!--<input ng-model="model.user.role" type="radio" value="writer"> Professor-->
     </form>
 
     <a class="btn btn-primary btn-block" ng-click="model.register(model.user)">Register</a>

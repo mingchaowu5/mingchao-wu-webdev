@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left">
+            <a href="#/writer/{{model.userId}}/published">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+        <div class="navbar-text pull-right">
+            <a href="#/writer/{{model.userId}}/book/{{model.bookId}}/article/new">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/writer/{{model.userId}}/book/{{model.bookId}}/articles">Lesson For Course</a>
+        </div>
+    </div>
+</nav>
+
+<div ng-show="model.error" class="alert alert-danger" role="alert">
+    {{model.error}}
+</div>
+
+<div class="container-fluid">
+    <ul class="list-group">
+        <li ng-repeat="article in model.articles" class="list-group-item">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <a href="#/writer/{{model.userId}}/book/{{model.bookId}}/article/{{article._id}}">
+                        {{article.title}}
+                    </a>
+                </div>
+                <div class="col-sm-2 hidden-xs">
+                    {{article.authors}}
+                </div>
+                <div class="col-sm-2 hidden-xs">
+                    {{article.chapterNumber}}
+                </div>
+                <div class="col-sm-2 hidden-xs">
+                    {{article.chapterName}}
+                </div>
+                <div class="col-sm-2 hidden-xs">
+                    {{article.liked}} Liked!
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
