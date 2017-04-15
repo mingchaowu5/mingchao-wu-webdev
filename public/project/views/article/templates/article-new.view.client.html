@@ -14,7 +14,7 @@
         </div>
         <div class="navbar-header">
             <!--<a class="navbar-brand" href="#/user/{{model.userId}}/website/new">New Website</a>-->
-            <a class="navbar-brand" href="#/writer/{{model.userId}}/book/{{model.bookId}}/article/new">New Article</a>
+            <a class="navbar-brand" href="#/writer/{{model.userId}}/book/{{model.bookId}}/article/new">New Lesson</a>
         </div>
     </div>
 </nav>
@@ -37,8 +37,10 @@
     <div ng-model="article.content"
          id="content"
          text-angular
-         ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+         ta-toolbar="[['h1','h2','h3'],
+         <!--['bold','italics','underline','strikeThrough'],-->
         ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
-        ['indent','outdent'],['html']]">
+        ['indent','outdent'],['html']]"
+    >
     </div>
 </div>

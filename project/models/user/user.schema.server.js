@@ -14,10 +14,6 @@ module.exports = function (app) {
         // readerInfo: {
         bookshelf: [{type: mongoose.Schema.Types.ObjectId, ref: 'book'}]
         // bookFollowing: [{type: mongoose.Schema.Types.ObjectId, ref: 'book'}],
-        // Optional features for later
-        // 1. follow an author
-        // 2. bookmark an article, book
-        // 3. liked book, articles
         ,
         // writerInfo: {
         publishedList: [{type: mongoose.Schema.Types.ObjectId, ref: 'book'}]

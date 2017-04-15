@@ -230,15 +230,26 @@ input.form-control {
     50% { opacity:0; }
     100% { opacity:1; }
 }
-.menubar
+.menubarup10
 {
     margin-bottom: 0px !important;
     background-color: #3EC9C3;
     border: none !important;
     border-radius: 0px !important;
     z-index: 2;
-    height: 57px;
+    height: auto;
+    margin-top: -10px;
 }
+.menubar
+  {
+      margin-bottom: 0px !important;
+      background-color: #3EC9C3;
+      border: none !important;
+      border-radius: 0px !important;
+      z-index: 2;
+      height: auto;
+    padding-top: -10px;
+  }
 .logo
 {
     padding: 24px 15px !important;
@@ -837,9 +848,9 @@ figure.effect-Beauty:hover p {
 /*background-color: greenyellow;*/
 /*}*/
 
-/*.navbar-default .navbar-brand {*/
-/*color: white;*/
-/*}*/
+.navbar-default .navbar-brand {
+color: black;
+}
 .ta-editor {
     min-height: 300px;
     height: auto;
@@ -924,14 +935,17 @@ input.form-control {
 /*background-color: greenyellow;*/
 /*}*/
 
-.navbar-default {
+.navbar{
 bakgroudcolor:#3EC9C3 ! important;
 }
 
 
 /*slider*/
 
+.bla {
+    color :black !important;
 
+}
 
 #main-slider {
     position: relative;

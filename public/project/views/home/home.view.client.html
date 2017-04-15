@@ -34,27 +34,29 @@
     <!--</div>-->
 </nav>
 
-
-<div class="container  up50 ">
+<nav class="navbar menubarup10 ">
+<div class="container ">
     <h3>Courses List</h3>
-    <div class="col-xs-4" ng-repeat="book in model.allBooks">
+    <div class="col-xs-3" ng-repeat="book in model.allBooks">
         <div class="row">
             <div class="col-xs-12 pull-right">
                 <!--<a href="#/reader/{{model.userId}}/book/{{book._id}}">-->
                 <a ng-click="model.gotoBook(book)">
-                    {{book.title}}
+                    <p class = "bla">{{book.title}}</p>
                 </a>
             </div>
         </div>
     </div>
 </div>
-<div class="up100">
+    </nav>
+<div >
 <div class="col-xs-8">
     <input class="form-control" id="coursenumber"  placeholder="ex.cs5610">
 </div>
 <!--<button onclick="window.location.href='https://www.google.com/search?q='+coursenumber.value">Search the CourseID in Google</button>-->
 <div class="col-xs-4">
-    <a class="btn btn-primary  btn-block" ng-click="window.location.href='https://www.google.com/search?q='+coursenumber.value">Search by CourseID</a>
+    <button  class="btn btn-primary  btn-block" onclick="window.location.href='https://www.google.com/search?q='+coursenumber.value">Search by CourseID</button>
+    <!--<a class="btn btn-primary  btn-block" ng-click="href='https://www.google.com/search?q='+coursenumber.value">Search by CourseID</a>-->
 </div>
 </div>
 

@@ -25,10 +25,10 @@ module.exports = function (app) {
 
 /*
  1. title
- 2. authors: [ref to users]
- 3. ISBN
+ 2. professor: [ref to users]
+ 3. course number
  4. articles: [references to articles]
- 5. subscriber: []
+ 5. register: []
  6. categories:
  7. liked: number of total liked
  */

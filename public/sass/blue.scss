@@ -48,7 +48,7 @@ $form-group-margin-bottom:       30px !default;
 @mixin flex() {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -moz-flex;
+	//display: -moz-flex;
 	display: -ms-flexbox;
 	display: flex;
 }
@@ -937,7 +937,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 .owl-carousel .owl-controls,
-.owl-carousel-posts .owl-controls, {
+.owl-carousel-posts .owl-controls{
 	margin-top: 0;
 }
 .owl-carousel .owl-controls .owl-nav {
