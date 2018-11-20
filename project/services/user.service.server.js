@@ -48,13 +48,13 @@ module.exports = function (app, model) {
     var bcrypt = require("bcrypt-nodejs");
     var passport = require('passport');
     var LocalStrategy = require('passport-local').Strategy;
-    var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+    // var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
     //var FacebookStrategy = require('passport-facebook').Strategy;
 
 
     passport.use(new LocalStrategy(localStrategy));
     //passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
-    passport.use(new GoogleStrategy(googleConfig, googleStrategy));
+    // passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
 
     passport.serializeUser(serializeUser);
@@ -103,36 +103,36 @@ module.exports = function (app, model) {
     app.put("/aw/api/user/:userId/addToShelf/:bookId", addToBookshelf);
     app.get("/aw/api/user", findUser);
 
-    function googleStrategy(token, refreshToken, profile, done) {
-        model.UserModel
-            .findUserByGoogleId(profile.id)
-            .then(function (user) {
-                if (user) {
-                    done(null, user);
-                } else {
-                    console.log("creating a new user");
-                    var user = {
-                        username: profile.emails[0].value,
-                        photo: profile.photos[0].value,
-                        firstName: profile.name.givenName,
-                        lastName: profile.name.familyName,
-                        email: profile.emails[0].value,
-                        google: {
-                            id: profile.id
-                        }
-                    };
-                    return model.UserModel.createUser(user);
-                }
-            }, function (err) {
-                done(err, null);
-            })
-            .then(function (user) {
-                done(null, user);
-                // return user;
-            }, function (err) {
-                done(err, null);
-            });
-    }
+    // function googleStrategy(token, refreshToken, profile, done) {
+    //     model.UserModel
+    //         .findUserByGoogleId(profile.id)
+    //         .then(function (user) {
+    //             if (user) {
+    //                 done(null, user);
+    //             } else {
+    //                 console.log("creating a new user");
+    //                 var user = {
+    //                     username: profile.emails[0].value,
+    //                     photo: profile.photos[0].value,
+    //                     firstName: profile.name.givenName,
+    //                     lastName: profile.name.familyName,
+    //                     email: profile.emails[0].value,
+    //                     google: {
+    //                         id: profile.id
+    //                     }
+    //                 };
+    //                 return model.UserModel.createUser(user);
+    //             }
+    //         }, function (err) {
+    //             done(err, null);
+    //         })
+    //         .then(function (user) {
+    //             done(null, user);
+    //             // return user;
+    //         }, function (err) {
+    //             done(err, null);
+    //         });
+    // }
 
 
     function localStrategy(username, password, done) {
