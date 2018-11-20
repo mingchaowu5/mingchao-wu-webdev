@@ -1,21 +1,8 @@
-# Mingchao Wu Website
+# web-dev-template
 
-This repository is for personal website
-
-Click here to navigate to my website.
-
-Running System Locally
-
-Pre Requisites:
-install package.json
-
-
-Run Locally:
-Go to File and then select Open Projects From File Systems
-Click on directory
-
-navigate to recently cloned repository.
-
-Click on Finish
-
-run ng serve
+1. git clone https://github.com/jannunzi/web-dev-template.git
+1. cd web-dev-template
+1. npm install
+1. mongod
+1. node server.js
+1. browse to localhost:3000
